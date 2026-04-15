@@ -41,7 +41,7 @@ with st.sidebar:
     
     # Adiciona linhas divisórias e explicações extras na barra lateral
     st.markdown("---")
-    st.markdown("Desenvolvido para auxiliar em suas dúvidas de programação com Linguagem Python. IA pode cometer erros. Sempre verifique as respostas.")
+    st.markdown("Desenvolvido para auxiliar em suas dúvidas de programação. IA pode cometer erros. Sempre verifique as respostas.")
 
 # Título principal do app
 st.title("💻 PyMentor — Seu guia em Programação")

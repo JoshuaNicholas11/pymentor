@@ -1,40 +1,56 @@
-🐍 PyMentor
+💻 PyMentor — Assistente de Programação
 
-Assistente de Python desenvolvido com Streamlit e integração com API de IA, criado para ajudar na resolução de exercícios, explicação de códigos e correção de erros de forma clara e direta.
+O **PyMentor** é uma aplicação web desenvolvida com **Python + Streamlit**, que funciona como um assistente de programação capaz de responder dúvidas de forma clara, prática e didática.
 
-Sobre o projeto:
+🔗 Acesse o projeto: https://pymentoria.streamlit.app/
 
-O PyMentor é um assistente focado exclusivamente em Python.  
-A proposta do projeto é oferecer suporte para estudantes e iniciantes na linguagem, respondendo dúvidas, explicando conceitos, gerando exemplos de código e auxiliando na identificação de erros.
 
 Funcionalidades:
 
-- Responde dúvidas sobre Python
-- Explica conceitos de programação
-- Gera exemplos de código
-- Corrige erros e sugere melhorias
-- Interface interativa em formato de chat
+- Responde perguntas sobre diversas linguagens de programação  
+- Explica conceitos de forma simples e direta  
+- Gera exemplos de código comentados  
+- Auxilia na resolução de exercícios  
+- Fornece referências para aprofundamento  
+
 
 Tecnologias utilizadas:
 
-- Python
-- Streamlit
-- Groq API
+- Python  
+- Streamlit  
+- API Groq (LLM)  
+- Git e GitHub  
 
-Como executar o projeto:
 
-1. Clone esse repositório: git clone https://github.com/JoshuaNicholas11/pymentor.git
+Como usar:
 
-2. Acesse a pasta do projeto: cd pymentor
+1. Acesse o link do projeto  
+2. Insira sua API Key da Groq  
+3. Faça sua pergunta sobre programação  
+4. Receba explicações + código + referências  
 
-3. Instale as dependências: pip install -r requirements.txt
 
-4. Execute a aplicação: streamlit run pymentor.py
 
-Configuração: Para utilizar o projeto, é necessário informar uma API Key da Groq no campo disponível na barra lateral da aplicação.
+Objetivo do projeto:
 
-Observação: Este projeto foi desenvolvido com foco educacional e pode cometer erros nas respostas. Sempre valide os códigos e explicações fornecidos.
+Este projeto foi desenvolvido com o objetivo de:
 
-Interface: Você pode adicionar aqui uma imagem do projeto para mostrar a interface da aplicação.
+- Praticar desenvolvimento com Python  
+- Criar uma aplicação web interativa  
+- Trabalhar com integração de IA  
+- Demonstrar habilidades para o mercado  
 
-Autor: Desenvolvido por Joshua Rodrigues.
+
+
+Observações:
+
+- A IA pode cometer erros  
+- Sempre valide as respostas antes de usar em produção  
+
+
+Contato:
+
+Caso queira trocar ideias ou dar feedback:
+
+- LinkedIn: https://www.linkedin.com/in/joshua-nicholas-rodrigues/
+- GitHub: https://github.com/JoshuaNicholas11

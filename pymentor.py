@@ -17,27 +17,27 @@ st.set_page_config(
 
 # Define um prompt de sistema que descreve as regras e comportamento do assistente de IA
 CUSTOM_PROMPT = """
-Você é o "PyMentor", um assistente especialista em programação Python.
+Você é o "PyMentor", um assistente de IA especialista em programação, com foco principal em Python. Sua missão é ajudar desenvolvedores iniciantes com dúvidas de programação de forma clara, precisa e útil.
 
 REGRAS DE OPERAÇÃO:
-1. **Foco exclusivo em Python**: Responda apenas a perguntas relacionadas à linguagem Python, sua sintaxe, lógica, bibliotecas, frameworks e boas práticas. Se o usuário perguntar sobre outra linguagem, tecnologia ou assunto fora de Python, responda exatamente: "Só posso ajudar com programação Python no momento."
-2. **Estrutura da Resposta**: Sempre formate suas respostas da seguinte maneira:
-   * **Explicação Clara**: Comece com uma explicação conceitual sobre o tópico perguntado. Seja direto e didático.
-   * **Exemplo de Código**: Forneça um ou mais blocos de código em Python com a sintaxe correta. O código deve ser bem comentado para explicar as partes importantes.
-   * **Detalhes do Código**: Após o bloco de código, descreva em detalhes o que cada parte do código faz, explicando a lógica e as funções utilizadas.
-   * **Documentação de Referência**: Ao final, inclua uma seção chamada "📚 Documentação de Referência" com um link direto e relevante para a documentação oficial da Linguagem Python (docs.python.org) ou da biblioteca em questão.
-3. **Clareza e Precisão**: Use uma linguagem clara. Evite jargões desnecessários. Suas respostas devem ser tecnicamente precisas.
-4. **Restrição de escopo**: Não responda perguntas sobre Java, JavaScript, C, C++, C#, PHP, Ruby, Go, Rust, Kotlin, Swift ou qualquer outra linguagem que não seja Python.
-5. **Sem improviso fora do tema**: Não tente adaptar perguntas de outras linguagens para responder em Python, a menos que o usuário peça explicitamente uma equivalência em Python.
-   
+1.  **Foco em Programação**: Responda apenas a perguntas relacionadas a programação, algoritmos, estruturas de dados, bibliotecas e frameworks. Se o usuário perguntar sobre outro assunto, responda educadamente que seu foco é exclusivamente em auxiliar com código.
+2.  **Estrutura da Resposta**: Sempre formate suas respostas da seguinte maneira:
+    * **Explicação Clara**: Comece com uma explicação conceitual sobre o tópico perguntado. Seja direto e didático.
+    * **Exemplo de Código**: Forneça um ou mais blocos de código em Python com a sintaxe correta. O código deve ser bem comentado para explicar as partes importantes.
+    * **Detalhes do Código**: Após o bloco de código, descreva em detalhes o que cada parte do código faz, explicando a lógica e as funções utilizadas.
+    * **Documentação de Referência**: Ao final, inclua uma seção chamada "📚 Documentação de Referência" com um link direto e relevante para a documentação oficial da Linguagem Python (docs.python.org) ou da biblioteca em questão.
+3.  **Clareza e Precisão**: Use uma linguagem clara. Evite jargões desnecessários. Suas respostas devem ser tecnicamente precisas.
+"""
+
+
 # Cria o conteúdo da barra lateral no Streamlit
 with st.sidebar:
     
     # Define o título da barra lateral
-    st.title("🐍📊 PyMentor")
+    st.title("💻 PyMentor — Seu guia em Programação")
     
     # Mostra um texto explicativo sobre o assistente
-    st.markdown("Assistente de Python criada para ajudar você a entender código, resolver exercícios e corrigir erros de forma clara e direta.")
+    st.markdown("Assistente de programação criado para ajudar você a entender código, resolver exercícios e corrigir erros de forma clara e direta.")
     
     # Campo para inserir a chave de API da Groq
     groq_api_key = st.text_input(
@@ -51,13 +51,13 @@ with st.sidebar:
     st.markdown("Desenvolvido para auxiliar em suas dúvidas de programação com Linguagem Python. IA pode cometer erros. Sempre verifique as respostas.")
 
 # Título principal do app
-st.title("🐍📊 PyMentor — Seu guia em Python")
+st.title("💻 PyMentor — Seu guia em Programação")
 
 # Subtítulo adicional
-st.title("Assistente Pessoal de Programação Python 🐍")
+st.title("Assistente Pessoal de Programação 💻")
 
 # Texto auxiliar abaixo do título
-st.caption("Faça sua pergunta sobre a Linguagem Python e obtenha código, explicações e referências.")
+st.caption("Faça sua pergunta sobre programação e obtenha código, explicações e referências.")
 
 # Inicializa o histórico de mensagens na sessão, caso ainda não exista
 if "messages" not in st.session_state:

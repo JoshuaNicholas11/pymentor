@@ -116,7 +116,7 @@ st.markdown(
     """
     <div style="text-align: center; color: gray;">
         <hr>
-        <p>PyMentor — Seu guia em programação - Assistente de Python criada para ajudar você a entender código, resolver exercícios e corrigir erros de forma clara e direta.</p>
+        <p>PyMentor — Seu guia em programação - Assistente de programação criada para ajudar você a entender código, resolver exercícios e corrigir erros de forma clara e direta.</p>
     </div>
     """,
     unsafe_allow_html=True

@@ -17,7 +17,7 @@ st.set_page_config(
 
 # Define um prompt de sistema que descreve as regras e comportamento do assistente de IA
 CUSTOM_PROMPT = """
-Você é o "PyMentor", um assistente de IA especialista em programação, com foco principal em Python. Sua missão é ajudar desenvolvedores iniciantes com dúvidas de programação de forma clara, precisa e útil.
+Você é o "PyMentor", um assistente de IA especialista em programação. Sua missão é ajudar desenvolvedores iniciantes com dúvidas de programação de forma clara, precisa e útil.
 
 REGRAS DE OPERAÇÃO:
 1.  **Foco em Programação**: Responda apenas a perguntas relacionadas a programação, algoritmos, estruturas de dados, bibliotecas e frameworks. Se o usuário perguntar sobre outro assunto, responda educadamente que seu foco é exclusivamente em auxiliar com código.
@@ -39,13 +39,6 @@ with st.sidebar:
     # Mostra um texto explicativo sobre o assistente
     st.markdown("Assistente de programação criado para ajudar você a entender código, resolver exercícios e corrigir erros de forma clara e direta.")
     
-    # Campo para inserir a chave de API da Groq
-    groq_api_key = st.text_input(
-        "Insira sua API Key Groq", 
-        type="password",
-        help="Obtenha sua chave em https://console.groq.com/keys"
-    )
-
     # Adiciona linhas divisórias e explicações extras na barra lateral
     st.markdown("---")
     st.markdown("Desenvolvido para auxiliar em suas dúvidas de programação com Linguagem Python. IA pode cometer erros. Sempre verifique as respostas.")
@@ -68,35 +61,16 @@ for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
 
-# Inicializa a variável do cliente Groq como None
-client = None
-
-# Verifica se o usuário forneceu a chave de API da Groq
-if groq_api_key:
-
-    try:
-        
-        # Cria cliente Groq com a chave de API fornecida
-        client = Groq(api_key = groq_api_key)
-    
-    except Exception as e:
-        
-        # Exibe erro caso haja problema ao inicializar cliente
-        st.sidebar.error(f"Erro ao inicializar o cliente Groq: {e}")
-        st.stop()
-
-# Caso não tenha chave, mas já existam mensagens, mostra aviso
-elif st.session_state.messages:
-     st.warning("Por favor, insira sua API Key da Groq na barra lateral para continuar.")
+try:
+    groq_api_key = st.secrets["GROQ_API_KEY"]
+    client = Groq(api_key=groq_api_key)
+except Exception as e:
+    st.error(f"Erro ao carregar a API Key: {e}")
+    st.stop()
 
 # Captura a entrada do usuário no chat
-if prompt := st.chat_input("Qual sua dúvida sobre Python?"):
+if prompt := st.chat_input("Qual sua dúvida sobre programação?"):
     
-    # Se não houver cliente válido, mostra aviso e para a execução
-    if not client:
-        st.warning("Por favor, insira sua API Key da Groq na barra lateral para começar.")
-        st.stop()
-
     # Armazena a mensagem do usuário no estado da sessão
     st.session_state.messages.append({"role": "user", "content": prompt})
     
@@ -142,7 +116,7 @@ st.markdown(
     """
     <div style="text-align: center; color: gray;">
         <hr>
-        <p>PyMentor — Seu guia em Python - Assistente de Python criada para ajudar você a entender código, resolver exercícios e corrigir erros de forma clara e direta.</p>
+        <p>PyMentor — Seu guia em programação - Assistente de Python criada para ajudar você a entender código, resolver exercícios e corrigir erros de forma clara e direta.</p>
     </div>
     """,
     unsafe_allow_html=True
